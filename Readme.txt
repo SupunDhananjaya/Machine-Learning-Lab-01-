@@ -31,6 +31,9 @@ Data Preprocessing
 Since the random forest is a tree-based model, I didn’t standardize the data. However, for the label_2, I used StandardScaler() to scale the feature values. 
 Furthermore, I drop the rows that have empty values since the number of rows that have missing values is relatively negligible. 
 
+train_data= pd.read_csv("train.csv", usecols =[i for i in cols if i not in ["label_2", "label_3", "label_4"]])
+train_data = train_data.dropna()
+train_data.head()
 
 Feature Engineering
 
